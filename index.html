@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <!-- My CSS -->
+    <link href="style.css" rel="stylesheet">
+
+    <title>HTML Level Check 2 (Airbnb)</title>
+
+    <!--
+    <MEMO>
+
+    ブレイクポイント
+    1680px 1439px  1127px 743px
+
+    1680px
+      メインコンテンツ部（最高の仕事に～働き方を変えたいなら）にて、
+      コンテンツサイズが縮小開始（切替ではなく縮小）。1681px以上ではサイズ変化なし。
+      →各ブロックのwidthの初期値を1680pxに設定し、要素サイズはパーセント設定しておけばよい？
+
+    1439px
+      メインコンテンツ部にて、コンテンツサイズが切り替わる。レイアウト変更はなし。
+
+    1127px
+      ヘッダ部にてナビバーが消え、背景画像の高さが低くなる。
+      メインコンテンツ部では、全体的に文字のwidthが広がり、レイアウトが一部、縦配置に変わる。
+
+    743px
+      ヘッダ部にて背景画像の高さが低くなり、文字が一部背景画像からはみ出る。また、再生ボタンが消える。
+      メインコンテンツ部にて、レイアウトが縦配置に変わる。
+
+    ※Bootstrapのgridシステムとブレイクポイントやコンテナの幅、余白が異なるため、使わないことにする。
+    -->
+  </head>
+  <body class="pos-relative">
+
+    <img class="disp-none_743 pos-absolute wid-full heigh-861 heigh-635_1127 obfit-cover" src="img/background.png">
+    <img class="disp-none disp-block_743 pos-absolute_743 wid-full_743 heigh-540_743 obfit-cover_743" src="img/background2.png">
+
+    <!-- Header -->
+    <header class="pos-relative header">
+      <nav class="disp-flex flex-just-between font-14 font-bold">
+        <a class="pad-x-15 pad-y-30" href="#"><img src="img/logo.png"></a>
+        <ul class="list-style-none disp-flex disp-none_1127">
+          <li><a class="pad-x-15 disp-block pad-y-30 color-white hov-deco-none hov-white hov-line-bold-white" href="#"><i class="far fa-circle"></i> 日本語(JP)</a></li>
+          <li><a class="pad-x-15 disp-block pad-y-30 color-white hov-deco-none hov-white hov-line-bold-white" href="#">￥JPY</a></li>
+          <li><a class="pad-x-15 disp-block pad-y-30 color-white hov-deco-none hov-white hov-line-bold-white" href="#">ホストをはじめる</a></li>
+          <li><a class="pad-x-15 disp-block pad-y-30 color-white hov-deco-none hov-white hov-line-bold-white" href="#">ヘルプ</a></li>
+          <li><a class="pad-x-15 disp-block pad-y-30 color-white hov-deco-none hov-white hov-line-bold-white" href="#">登録する</a></li>
+          <li><a class="pad-x-15 disp-block pad-y-30 color-white hov-deco-none hov-white hov-line-bold-white" href="#">ログイン</a></li>
+        </ul>
+      </nav>
+
+      <div class="pos-relative wid-full pad-t-175 pad-l-15pc pad-t-70_1127 pad-l-8pc_1127 pad-t-320_743 pad-l-5pc_743 pad-t-285_541">
+        <h1 class="wid-550 wid-87pc_743 color-white font-47 font-32_743 font-bold">世界の果てまで、アットホーム</h1>
+        <p class="pad-t-12"><a class="color-white font-bold hov-white" href="#">Airbnbビジネスプログラムの動画を見る &nbsp;<i class="fas fa-play"></i></a></p>
+        <p class="pad-t-15 pad-t-50_743"><a class="color-white color-black_743 font-bold hov-deco-none hov-white hov-black_743" href="#">まずは仕事用メールアドレスの入力から</a></p>
+        <div class="pos-relative">
+          <input type="text" class="pad-x-140 pad-y-17 bord-rad bg-color-txt">
+          <button class="pos-absolute pos-20pc-260 pad-x-15 pad-y-7 bord-rad font-15 color-white bg-color-mail" type="button">メールアドレスを追加</button>
+        </div>
+        <p class="disp-inblock pad-t-12 pad-t-23_743 color-white color-gray_743 mg-0_743">出張管理をご担当ですか？</p>
+        <p class="disp-inblock disp-block_743 pad-t-12 pad-0_743"><a class="color-white color-blue_743 font-bold font-normal_743 hov-white hov-blue_743" href="#">もっと詳しく <i class="fas fa-angle-right"></i></a></p>
+        <button class="disp-none_743 pos-absolute pos-690--20 pos-470_1127 pad-x-25 pad-y-10 bord-rad color-white bg-color-play" type="button">再生 &nbsp; <i class="fas fa-play"></i></button>
+        <p class="disp-none hr_743 pad-t-23_743"></p>
+      </div>
+    </header>
+
+    <!-- Three images -->
+    <div class="maxwid-1680 mg-x-auto mg-t-105 mg-t-270_743">
+      <h1 class="pad-t-23_743 txt-center font-46 font-32_1439 font-24_743">最高の仕事に必要なものすべてを完備</h1>
+      <ul class="list-style-none disp-flex flex-just-center flex-dir-col_743 mg-t-25">
+        <li class="wid-25pc wid-96pc_743 mg-r-15 mg-x-auto_743"><img class="disp-block wid-full heigh-415 heigh-335_1439 heigh-380_743 obfit-cover" src="img/img1.jpg"><p class="pad-t-15 txt-center font-18">高評価の宿泊先＆デザイナーズホテル</p></li>
+        <li class="wid-25pc wid-96pc_743 mg-r-15 mg-x-auto_743 pad-t-13_743"><img class="disp-block wid-full heigh-415 heigh-335_1439 heigh-380_743 obfit-cover" src="img/img2.jpg"><p class="pad-t-15 txt-center font-18">チームビルディング体験</p></li>
+        <li class="wid-25pc wid-96pc_743 mg-r-15 mg-x-auto_743 pad-t-13_743"><img class="disp-block wid-full heigh-415 heigh-335_1439 heigh-380_743 obfit-cover" src="img/img3.jpg"><p class="pad-t-15 txt-center font-18">コラボを育むスペース</p></li>
+        <p class="disp-none hr_743 pad-t-35_743"></p>
+      </ul>
+    </div>
+
+    <!-- Two columns section 1 -->
+    <div class="pad-x-15 mg-t-105 mg-t-30_743">
+      <ul class="maxwid-1650 heigh-625 heigh-500_1439 heigh-auto_743 list-style-none disp-flex flex-dir-colrev_743 mg-x-auto">
+        <li class="wid-41pc wid-full_743 mg-r-15 pad-t-40_743"><img class="wid-full heigh-full heigh-380_743 obfit-cover" src="img/img4.jpg"></li>
+        <li class="wid-58pc wid-full_743 bg-color-orange bg-color-white_743">
+          <h1 class="pad-t-210 pad-x-23pc pad-t-170_1439 pad-x-20pc_1439 pad-x-8pc_1127 pad-t-0_743 pad-l-45_743 font-46 font-32_1439 font-24_743">出張先でも、アットホーム</h1>
+          <p class="pad-x-23pc pad-x-20pc_1439 pad-x-8pc_1127 pad-t-13_743 pad-l-45_743 font-18 font-14_743">出張のときも、新天地に異動のときも安心。他の出張者が5つ星評価をつけたお部屋やデザイナーズホテルを探しましょう。</p>
+          <a class="disp-block pad-x-23pc pad-x-20pc_1439 pad-l-45_743 pad-x-8pc_1127" href="#">仕事用スペースを完備した宿泊先を検索 <i class="fas fa-angle-right"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Two columns section 2 -->
+    <div class="pad-x-15 mg-t-15 pad-x-0_743">
+      <ul class="maxwid-1650 heigh-625 heigh-500_1439 heigh-auto_743 list-style-none disp-flex flex-dir-col_743 mg-x-auto">
+        <li class="wid-58pc wid-full_743 mg-r-15 pad-y-62_743 bg-color-green">
+          <h1 class="pad-t-210 pad-x-23pc pad-t-170_1439 pad-x-20pc_1439 pad-x-8pc_1127 pad-t-0_743 pad-l-65_743 color-white font-46 font-32_1439 font-24_743">チームの心をひとつに</h1>
+          <p class="pad-x-23pc pad-x-20pc_1439 pad-x-8pc_1127 pad-t-13_743 pad-l-65_743 color-white font-18 font-14_743">ラーメン作り教室やカヌーレッスンに参加。普段オフィスでは目にできない同僚たちの意外な面に触れ、深いレベルでつながれます。</p>
+          <a class="disp-block pad-x-23pc pad-x-20pc_1439 pad-l-65_743 pad-x-8pc_1127 color-white hov-white" href="#">Airbnbの「体験」を検索 <i class="fas fa-angle-right"></i></a>
+        </li>
+        <li class="wid-600 wid-41pc_1500 wid-600_743 wid-full_642 pad-t-15_743 pad-l-15_743 pad-r-15_642"><img class="wid-full heigh-full heigh-380_743 obfit-cover" src="img/img5.jpg"></li>
+      </ul>
+    </div>
+
+    <!-- Two columns section 3 -->
+    <div class="pad-x-15 mg-t-15 mg-t-50_743">
+      <ul class="maxwid-1650 heigh-625 heigh-500_1439 heigh-auto_743 list-style-none disp-flex flex-dir-colrev_743 mg-x-auto">
+        <li class="wid-41pc wid-full_743 mg-r-15 pad-t-40_743"><img class="wid-full heigh-full heigh-380_743 obfit-cover" src="img/img6.jpg"></li>
+        <li class="wid-58pc wid-full_743 bg-color-orange bg-color-white_743">
+          <h1 class="pad-t-210 pad-x-23pc pad-t-170_1439 pad-x-20pc_1439 pad-x-8pc_1127 pad-t-0_743 pad-l-45_743 font-46 font-32_1439 font-24_743">創造力をかきたてるスペース</h1>
+          <p class="pad-x-23pc pad-x-20pc_1439 pad-x-8pc_1127 pad-t-13_743 pad-l-45_743 font-18 font-14_743">煮詰まったら1日オフサイトで気分を変えてみませんか？ひらめきが湧く環境で、チームの生産性を高めましょう。</p>
+          <a class="disp-block pad-x-23pc pad-x-20pc_1439 pad-l-45_743 pad-x-8pc_1127" href="#">Wi-Fi完備の宿泊先を見る <i class="fas fa-angle-right"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Two columns section 4 -->
+    <div class="pad-y-58 mg-t-95 mg-t-65_1127 mg-t-15_743 bg-color-green">
+      <ul class="list-style-none disp-flex flex-dir-col_1127 flex-just-center">
+        <li class="wid-400 wid-360_1439 wid-450_1127 wid-67pc_743 mg-x-140 mg-x-140_1439 mg-x-auto_1127 pad-b-65_1127">
+          <h1 class="color-white font-32 font-24_743">安全第一のシステム</h1>
+          <p class="color-white font-18 font-14_743">セキュアな支払いシステムから経験者のレビューまで、Airbnbは安全中心のシステムです。</p>
+          <a class="color-white font-bold font-normal_743 hov-white" href="#">もっと詳しく <i class="fas fa-angle-right"></i></a>
+        </li>
+        <li>
+          <div class="disp-none hr_1127 wid-90pc_743"></div>
+        </li>
+        <li class="wid-400 wid-360_1439 wid-450_1127 wid-67pc_743 mg-x-140 mg-x-140_1439 mg-x-auto_1127 pad-t-65_1127">
+          <h1 class="color-white font-32 font-24_743">グローバルカスタマーサポート</h1>
+          <p class="color-white font-18 font-14_743">専門スタッフが、年中無休で営業時間内に11言語でサポートいたします。</p>
+          <a class="color-white font-bold font-normal_743 hov-white" href="#">もっと詳しく <i class="fas fa-angle-right"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Two columns section 5 -->
+    <div class="pad-x-15 pad-x-0_743 mg-t-105 mg-t-65_1127 mg-t-15_743">
+      <ul class="maxwid-1650 heigh-625 heigh-500_1439 heigh-auto_743 list-style-none disp-flex flex-just-center flex-dir-col_743 mg-x-auto">
+        <li class="wid-36pc wid-40pc_1439 wid-600_743 wid-full_642 mg-r-85 mg-r-3pc_1690 mg-r-15_1439 pad-l-15_743 pad-r-15_642"><img class="wid-full heigh-full heigh-380_743 obfit-cover" src="img/img7.jpg"></li>
+        <li class="wid-40pc wid-41pc_1439 wid-full_743 pad-y-45_743 mg-t-15_743 bg-color-orange">
+          <p class="pad-t-150 pad-x-18pc pad-t-115_1439 pad-x-20pc_1439 pad-t-145_1127 pad-t-13_743 mg-0_743 font-25 font-20_1439 font-18_1127 font-14_743 line-heigh-2 line-heigh-1_1127">「Airbnbは自活できるのがいいですね。毎晩外食しなくても、みんなで好きなものを料理できるし、とても出張とは思えないほど現地に根を下ろせます」</p>
+          <p class="pad-x-18pc pad-x-20pc_1439 pad-t-8_743 mg-b-0 font-16">MARTA KUTT様</p>
+          <p class="pad-x-18pc pad-x-20pc_1439 font-16">Transferwise社マネジャー</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Form bottom -->
+    <div class="wid-full pad-t-55 pad-b-35 pad-t-35_1127 pad-b-20_1127 mg-t-95 mg-t-65_1127 mg-t-15_743 txt-center bg-color-orange bord-bottom-gray">
+      <h1 class="font-47 font-32_1439 font-24_743">働き方を変えたいなら、Airbnbです</h1>
+      <p class="pad-t-15 pad-r-170 mg-b-0 pad-t-30_743 pad-l-5pc_743"><a class="color-black hov-black hov-deco-none font-bold" href="#">まずは仕事用メールアドレスの入力から</a></p>
+      <div class="pos-relative pad-t-8">
+        <input type="text" class="pad-x-140 pad-y-17 pad-x-125_743 bord-rad bg-color-txt">
+        <button class="pos-absolute pos-26pc-52pc pad-x-15 pad-y-7 bord-rad font-15 color-white bg-color-mail" type="button">メールアドレスを追加</button>
+      </div>
+      <hr class="wid-450 mg-t-45 mg-b-47 mg-t-30_743 mg-b-30_743">
+      <p class="mg-b-0 font-bold">出張管理をご担当ですか？</p>
+      <p class="pad-y-2 mg-b-0 pad-x-4pc_544">こんなにある、Airbnbビジネスプログラム法人企業様のメリット。</p>
+      <p class="pad-t-2"><a href="#">もっと詳しく <i class="fas fa-angle-right"></i></a></p>
+    </div>
+
+    <!-- Last section -->
+    <div class="end">
+
+      <!-- Site map -->
+      <div class="menu">
+        <ul class="out">
+          <li class="out">
+            <ul class="in">
+              <li class="in"><p>企業情報</p></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">Airbnbのご利用方法</a></li>
+              <li class="in"><a href="#">ニュースルーム</a></li>
+              <li class="in"><a href="#">Airbnb Plus</a></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">Airbnb Luxe</a></li>
+              <li class="in"><a href="#">HotelTonight</a></li>
+              <li class="in"><a href="#">Airbnbビジネスプログラム</a></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">オリンピック</a></li>
+              <li class="in"><a href="#">採用情報</a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+            </ul>
+          </li>
+
+          <li class="out">
+            <ul class="in">
+              <li class="in"><p>コミュニティ</p></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">ダイバーシティ＆ビロンギング</a></li>
+              <li class="in"><a href="#">アクセシビリティ対応</a></li>
+              <li class="in"><a href="#">Airbnbアソシエイト</a></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">お友達を招待</a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+            </ul>
+            <ul class="in">
+              <li class="in no-content"><a href="#"> </a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+            </ul>
+          </li>
+
+          <li class="out">
+            <ul class="in">
+              <li class="in"><p>ホスト</p></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">お部屋を掲載</a></li>
+              <li class="in"><a href="#">オンライン体験をホストする</a></li>
+              <li class="in"><a href="#">体験をホストする</a></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">CEOブライアン・チェスキーからのメッセージ</a></li>
+              <li class="in"><a href="#">責任あるホスティング</a></li>
+              <li class="in"><a href="#">オープンホーム</a></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">リソースセンター</a></li>
+              <li class="in"><a href="#">コミュニティセンター</a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+            </ul>
+          </li>
+
+          <li class="out">
+            <ul class="in">
+              <li class="in"><p>サポート</p></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">新型コロナウイルスに関する最新情報</a></li>
+              <li class="in"><a href="#">ヘルプセンター</a></li>
+              <li class="in"><a href="#">キャンセルオプション</a></li>
+            </ul>
+            <ul class="in">
+              <li class="in"><a href="#">近隣コミュニティサポート</a></li>
+              <li class="in"><a href="#">信頼＆安全</a></li>
+              <li class="in"><a href="#"> </a></li>
+            </ul>
+            <ul class="in">
+              <li class="in no-content"><a href="#"> </a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+              <li class="in no-content"><a href="#"> </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <div class="fotter">
+        <div class="left">
+          <a href="#">
+            <p>Airbnb Global Services Limited </p>
+            <p>観光庁長官(01)第S0001号(2018年6月15日-2023年6月14日)</p>
+            <p>Airbnb Global Services Limited 観光庁長官(01)第S0001号(2018年6月15日-2023年6月14日)</p>
+          </a>
+          <div class="left-bottom">
+            <p>© 2020 Airbnb, Inc. All rights reserved</p>
+            <ul>
+              <li class="point">·</li>
+              <li><a href="#">プライバシー</a></li>
+              <li class="point">·</li>
+              <li><a href="#">利用規約</a></li>
+              <li class="point">·</li>
+              <li><a href="#">サイトマップ</a></li>
+              <li class="point">·</li>
+              <li><a href="#">企業情報</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="right">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="far fa-circle"></i> 日本語 (JP)
+              </a>
+            </li>
+            <li><a href="#">¥ JPY</a></li>
+            <li class="social"><i class="fab fa-facebook-f"></i></li>
+            <li class="social"><i class="fab fa-twitter"></i></li>
+            <li class="social"><i class="fab fa-instagram"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
